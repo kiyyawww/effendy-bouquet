@@ -1,4 +1,4 @@
-![user2_xml](https://github.com/user-attachments/assets/0a276cb7-fcc6-4089-87c0-c1fb4aa757a6)# ✧˚ ༘ ⋆｡♡˚💐 ***Selamat Datang di Effendy Bouquet*** 💐 ✧˚ ༘ ⋆｡♡˚
+✧˚ ༘ ⋆｡♡˚💐 ***Selamat Datang di Effendy Bouquet*** 💐 ✧˚ ༘ ⋆｡♡˚
 <img src="pict/effendy_bouquet.jpg" width="600" height="200">
 
 
