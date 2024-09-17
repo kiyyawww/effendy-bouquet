@@ -1,6 +1,12 @@
 ![user2_xml](https://github.com/user-attachments/assets/0a276cb7-fcc6-4089-87c0-c1fb4aa757a6)# ✧˚ ༘ ⋆｡♡˚💐 ***Selamat Datang di Effendy Bouquet*** 💐 ✧˚ ༘ ⋆｡♡˚
 <img src="pict/effendy_bouquet.jpg" width="600" height="200">
 
+
+Nama: Naila Zakiyyah Effendy
+NPM: 2306165793
+Kelas: PBP B
+link pws --> http://naila-zakiyyah-effendybouquet.pbp.cs.ui.ac.id/
+
 ## Tugas Individu 2 PBP 
 ### Cara Mengimplementasikan Sesuai _Checklist_
 Untuk memulai proyek Django, saya pertama-tama membuat direktori utama dengan nama ```effendy-bouquet``` kemudian menghubungkan repositori lokal dengan repositori di GitHub dan melakukan _cloning_ repositori tersebut ke komputer lokal. Di dalam direktori ini, saya membuat virtual environment menggunakan perintah ```python -m venv env```. Virtual environment ini berguna untuk mengisolasi package dan dependencies proyek, sehingga tidak akan bentrok dengan proyek lain atau sistem Python global. Setelah itu, saya mengaktifkan virtual environment dengan menjalankan ```env\Scripts\activate```.
