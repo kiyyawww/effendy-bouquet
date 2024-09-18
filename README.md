@@ -126,7 +126,7 @@ Di template membuat tabel yang menampilkan setiap entri mood yang sudah disimpan
 
 **7. Menampilkan Data Berdasarkan ID**
    
-1) Pada file ```views.py``` membuuat dua fungsi baru ```show_xml_by_id``` dan ```show_json_by_id```. Kedua fungsi ini akan menerima parameter id dan mengambil data dari model ```MoodEntry```` berdasarkan ID menggunakan ```ProductEntry.objects.filter(pk=id)```. Untuk fungsi XML, gunakan ```serializers.serialize("xml", data)``` dan kembalikan hasilnya dengan ```HttpResponse(content_type="application/xml")```. Untuk fungsi JSON, gunakan ```serializers.serialize("json", data)``` dan kembalikan hasilnya dengan` ```HttpResponse(content_type="application/json")```.
+1) Pada file ```views.py``` membuuat dua fungsi baru ```show_xml_by_id``` dan ```show_json_by_id```. Kedua fungsi ini akan menerima parameter id dan mengambil data dari model ```MoodEntry```` berdasarkan ID menggunakan ```ProductEntry.objects.filter(pk=id)```. Untuk fungsi XML, gunakan ```serializers.serialize("xml", data)``` dan kembalikan hasilnya dengan ```HttpResponse(content_type="application/xml")```. Untuk fungsi JSON, gunakan serializers.serialize("json", data) dan kembalikan hasilnya dengan HttpResponse(content_type="application/json").
 
 2) Pada file ```urls.py``` menambahkan path baru untuk mengakses kedua fungsi berdasarkan ID, seperti ```path('xml/<str:id>/', show_xml_by_id, name='show_xml_by_id')``` dan ```path('json/<str:id>/', show_json_by_id, name='show_json_by_id')```.
 
@@ -146,7 +146,7 @@ Selanjutnya, di GitHub, tambahkan secret bernama ```PWS_URL``` pada bagian ```Se
 
 Setelah itu ```git add```, ```commit```, dan ```push``` ke GitHub. Proses deployment ke PWS akan berjalan otomatis, sehingga tidak perlu melakukan push secara manual ke PWS setiap kali melakukan perubahan di repositori.
 
-## Membuat Screenshot dari Hasil Akses URL pada Postman
+### Membuat Screenshot dari Hasil Akses URL pada Postman
 
 <img src="pict/xml.png" width="800" height="500">
 <img src="pict/user1_xml.png" width="800" height="500">
