@@ -8,7 +8,7 @@ def show_main(request):
     product_entries = Product.objects.all()
     
     context = {
-        'nama' : 'Naila Zakiyyah Effendy', # menambahkan filedsnya 
+        'nama' : 'Naila Zakiyyah Effendy', 
         'kelas' : 'PBP B',
         'product_entries' : product_entries,
     }
