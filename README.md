@@ -8,6 +8,8 @@ Kelas: PBP B
 link pws --> http://naila-zakiyyah-effendybouquet.pbp.cs.ui.ac.id/
 
 ## Tugas Individu 2 PBP 
+</details>
+
 ### Cara Mengimplementasikan Sesuai _Checklist_
 Untuk memulai proyek Django, saya pertama-tama membuat direktori utama dengan nama ```effendy-bouquet``` kemudian menghubungkan repositori lokal dengan repositori di GitHub dan melakukan _cloning_ repositori tersebut ke komputer lokal. Di dalam direktori ini, saya membuat virtual environment menggunakan perintah ```python -m venv env```. Virtual environment ini berguna untuk mengisolasi package dan dependencies proyek, sehingga tidak akan bentrok dengan proyek lain atau sistem Python global. Setelah itu, saya mengaktifkan virtual environment dengan menjalankan ```env\Scripts\activate```.
 Kemudian membuat file ```requirements.txt```. Setelah itu menginstalasi _dependencies_ dengan pip ```pip install -r requirements.txt```. Dengan Django terinstal, saya membuat proyek baru dengan nama effendy_bouquet menggunakan perintah ```django-admin startproject effendy_boquet .```.  Dilanjutkan dengan mengubah ```ALLOWED_HOSTS``` di ```settings.py``` untuk keperluan deployment pada direktori ```effendy_bouquet```. Setelah proyek dibuat, saya menjalankan server lokal dengan ```python manage.py runserver``` untuk memastikan bahwa semuanya berjalan dengan baik. Saya kemudian memeriksa aplikasi melalui browser dengan mengakses ```http://localhost:8000```. Setelah memastikan bahwa semuanya berjalan lancar, saya menghentikan server dengan ```Ctrl+C``` dan menonaktifkan virtual environment menggunakan perintah ```deactivate```.
@@ -49,9 +51,12 @@ Framework ini fleksibel dan dapat digunakan untuk proyek kecil hingga besar, ser
 ### Alasana Model pada Django disebut Sebagai _ORM_
 
 Django memiliki _Object Relational Mapping (ORM)_ bawaan yang memudahkan pengembang melakukan query database tanpa menulis banyak kode. ORM ini memungkinkan pengembang bekerja dengan database menggunakan objek Python, tanpa perlu menulis query SQL secara langsung. Setiap field dalam class ORM dapat langsung diubah menjadi tabel di database. Dengan ORM, pengembang dapat melakukan operasi ```CRUD (Create, Read, Update, Delete)``` dengan metode berbasis objek, yang mempermudah integrasi antara kode Python dan sistem basis data relasional. Django juga didukung dengan dokumentasi yang lengkap dan jelas, sehingga mudah dipahami bahkan oleh pemula.
+</details>
 
 
 ## Tugas Individu 3 PBP
+</details>
+
 ### Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 Data delivery sangat penting dalam membuat platform karena memungkinkan pertukaran informasi antara pengguna (seperti aplikasi web atau mobile) dan server. Pada umumnya, platform terdiri dari beberapa bagian yang terhubung dan saling bekerja sama. Agar setiap bagian ini bisa saling berkomunikasi, diperlukan data delivery.
 
@@ -155,5 +160,89 @@ Setelah itu ```git add```, ```commit```, dan ```push``` ke GitHub. Proses deploy
 <img src="pict/user1_json.png" width="800" height="500">
 <img src="pict/user2_json.png" width="800" height="500">
 
+</details>
 
 
+## Tugas Individu 4 PBP
+<details>
+
+### Apa perbedaan antara HttpResponseRedirect() dan redirect()
+
+Di Django, ```HttpResponseRedirect()``` adalah kelas yang mengembalikan respons HTTP untuk mengarahkan pengguna ke URL tertentu Jadi kita perlu menyertakan URL secara eksplisit saat menggunakannya, baik itu URL absolut maupun relatif.
+
+
+Sedangkan pada ```redirect()``` adalah fungsi bawaan Django yang lebih fleksibel karena bisa menerima nama URL, objek model, atau string URL langsung. Fungsi ini memanfaatkan Django URL resolver untuk secara otomatis menemukan path yang benar sehingga lebih efisien dibandingkan menulis URL secara manual.
+
+### Jelaskan cara kerja penghubungan model Product dengan User!
+
+Penjelasan mengenai penghubungan model Product dengan User serupa dengan bagaimana model ```ProductEntry``` dihubungkan dengan User dalam proyek yang kita kerjakan. Model ProductEntry terhubung dengan User menggunakan relasi ```ForeignKey```. Ini memungkinkan setiap objek ```ProductEntry``` memiliki pengguna yang berhubungan dengannya. Misalnya pada model ProductEntry ditambahkan atribut user yang merujuk pada objek User melalui ```ForeignKey```.
+
+
+Dengan pengaturan ini, setiap product entry yang dibuat pasti akan terkait dengan satu user. Saat sebuah product entry disimpan maka pengguna yang sedang login akan diambil dari request.user dan diisi dalam field user sebelum disimpan ke database. Hal ini memastikan bahwa setiap entry hanya dapat dilihat oleh pengguna yang membuatnya.
+
+
+Begitu juga untuk Product, model ini bisa dihubungkan dengan User dengan menambahkan ```ForeignKey``` ke dalamnya. Memastikan bahwa setiap produk yang dibuat terasosiasi dengan pengguna yang membuat produk tersebut.
+
+
+### Apa perbedaan antara authentication dan authorization, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut.
+
+
+```Authentication``` adalah proses memverifikasi identitas pengguna biasanya dengan username dan password untuk mencegah akses tidak sah. ```Authorization``` adalah proses memberi izin kepada pengguna yang sudah terverifikasi untuk mengakses sumber daya atau melakukan tindakan tertentu. Di Django, ```authentication``` dilakukan dengan memeriksa username dan password kemudian membuat sesi menggunakan cookie untuk melacak pengguna yang login. Setelah login, ```authorization``` memastikan apakah pengguna tersebut punya izin untuk melakukan tindakan tertentu, seperti mengakses halaman khusus berdasarkan peran atau izin yang telah ditetapkan.
+
+### Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan?
+
+
+Django menggunakan cookies untuk mengingat pengguna yang sudah login. Ketika pengguna login ke sebuah website berbasis Django, server akan menyimpan informasi login dalam sebuah sesi (session) dan memberikan **session cookie** kepada browser pengguna. Seperti yang dijelaskan oleh BBC, cookies adalah file kecil yang menyimpan informasi dari website dan dikirimkan kembali ke situs tersebut. Django memanfaatkan cookies ini untuk menyimpan informasi sesi pengguna yang login. Setiap kali pengguna mengunjungi halaman yang berbeda di aplikasi Django, **session key** di dalam cookie akan memungkinkan Django untuk mengenali pengguna.
+
+**Kegunaan lain dari cookies**:
+- **Menyimpan Informasi Login**: Seperti yang disebutkan sebelumnya, cookies memungkinkan pengguna tidak perlu memasukkan ulang username dan password setiap kali mengunjungi situs.
+- **Menyediakan Konten yang Personal**: Cookies dapat mengingat jenis konten atau pengaturan yang dipilih pengguna, sehingga website bisa menyajikan konten yang relevan dengan preferensi pengguna.
+- **Menyimpan Pengaturan Website**: Misalnya, cookies bisa menyimpan preferensi bahasa yang dipilih pengguna.
+- **Mendukung Keperluan Marketing**: Cookies juga digunakan untuk menampilkan iklan yang relevan berdasarkan aktivitas pengguna di internet.
+
+
+Secara umum, cookies tidak mengandung malware atau virus karena mereka hanya berupa data pasif yang dikirim bolak-balik antara website dan komputer pengguna. Namun, karena cookies dapat menyimpan informasi pribadi jadi pengguna harus berhati-hati. Informasi di cookies bisa saja dicuri jika pengguna mengunjungi situs yang berbahaya. Oleh karena itu, penting untuk mengelola cookies dengan hati-hati. Kita bisa melakukannya dengan menghapus cookies, mengatur izin situs untuk menyimpan cookies, atau memblokir cookies dari situs yang mencurigakan.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
+
+
+1. Menambahkan Fungsi Register, Login, dan Logout di views.py. Membuat tiga fungsi baru di file views.py yaitu register, login_user, dan logout_user. 
+
+2. Membuat File HTML untuk Login dan Register. Membuat folder login di dalam direktori main/templates. Di dalam folder tersebut membuat file baru yaitu login.html dan register.html untuk halaman login dan registrasi.
+
+3. Di file urls.py kita tambahkan routing untuk fungsi register, login_user, dan logout_user agar pengguna bisa mengakses halaman tersebut melalui URL yang sesuai.
+
+4. Di dalam fungsi login (login_user), setelah validasi form selanjutnya ambil data user dari form dan lakukan login. Tambahkan cookie last_login dengan menyimpan waktu login pengguna. 
+
+```python
+if form.is_valid():
+    user = form.get_user()
+    login(request, user)
+    response = HttpResponseRedirect(reverse("main:show_main"))
+    response.set_cookie('last_login', str(datetime.datetime.now()))
+    return response
+```
+
+5. Menambahkan cookie ke konteks di show_main. Di fungsi show_main pada file views.py kita tambahkan nilai last_login ke dalam context.
+```python
+context = {
+    'name': request.user.username,
+    'class' : 'PBP B',
+    'product_entries': product_entries,
+    'last_login': request.COOKIES['last_login'],
+}
+```
+
+6. Menambahkan foreignKey pada model product. Di file models.py kita buat relasi ForeignKey antara model product dan model User.
+```python
+class Product(models.Model):
+user = models.ForeignKey(User, on_delete=models.CASCADE)
+```
+
+7. Melakukan migrasi database. Kita jalankan perintah python manage.py makemigrations dan python manage.py migrate untuk mensinkronkan perubahan database termasuk penambahan relasi ForeignKey.
+
+## Referensi
+https://www.geeksforgeeks.org difference-between-authentication-and-authorization/
+
+https://www.totalit.co.id/blog mengenal-cookies-browser-fungsi-bahaya-dan-cara-mengelolanya
+</details>
