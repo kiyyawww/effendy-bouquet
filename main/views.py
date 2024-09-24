@@ -15,7 +15,7 @@ from django.urls import reverse
 
 @login_required(login_url='/login')
 def show_main(request):
-    product_entries = Product.objects.all()
+    product_entries = Product.objects.filter(user=request.user)
 
     context = {
         'nama': request.user.username,

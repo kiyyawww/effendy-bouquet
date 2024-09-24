@@ -8,7 +8,7 @@ Kelas: PBP B
 link pws --> http://naila-zakiyyah-effendybouquet.pbp.cs.ui.ac.id/
 
 ## Tugas Individu 2 PBP 
-</details>
+<details>
 
 ### Cara Mengimplementasikan Sesuai _Checklist_
 Untuk memulai proyek Django, saya pertama-tama membuat direktori utama dengan nama ```effendy-bouquet``` kemudian menghubungkan repositori lokal dengan repositori di GitHub dan melakukan _cloning_ repositori tersebut ke komputer lokal. Di dalam direktori ini, saya membuat virtual environment menggunakan perintah ```python -m venv env```. Virtual environment ini berguna untuk mengisolasi package dan dependencies proyek, sehingga tidak akan bentrok dengan proyek lain atau sistem Python global. Setelah itu, saya mengaktifkan virtual environment dengan menjalankan ```env\Scripts\activate```.
@@ -55,7 +55,7 @@ Django memiliki _Object Relational Mapping (ORM)_ bawaan yang memudahkan pengemb
 
 
 ## Tugas Individu 3 PBP
-</details>
+<details>
 
 ### Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 Data delivery sangat penting dalam membuat platform karena memungkinkan pertukaran informasi antara pengguna (seperti aplikasi web atau mobile) dan server. Pada umumnya, platform terdiri dari beberapa bagian yang terhubung dan saling bekerja sama. Agar setiap bagian ini bisa saling berkomunikasi, diperlukan data delivery.
