@@ -246,3 +246,91 @@ https://www.geeksforgeeks.org difference-between-authentication-and-authorizatio
 
 https://www.totalit.co.id/blog mengenal-cookies-browser-fungsi-bahaya-dan-cara-mengelolanya
 </details>
+
+## Tugas Individu 4 PBP
+<details>
+
+## Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+
+1) Inline styles -> Gaya yang langsung diterapkan pada elemen HTML melalui atribut style. Contoh:
+    ```html
+        <div style="color: green;"></div>
+    ```
+
+2) IDs: Selector yang menggunakan ID elemen, ditulis dengan simbol ```#```. Contoh:
+    ```css
+        #myId { color: green; }
+    ```
+
+3) Classes, Attributes, dan Pseudo-classes -> Selector yang menggunakan class (```.className```), atribut (```[attribute=value]```), atau pseudo-class seperti ```:hover``` dan ```:focus```. Contoh:
+    ```css
+    .myClass { color: green; }
+    ```
+
+4) Elements dan Pseudo-elements -> Selector yang menggunakan nama tag HTML (seperti ```div```, ```p```) atau pseudo-element seperti ```::before``` dan ```::after```. Contoh:
+    ```css
+        div { color: green; }
+    ```
+
+5) Universal Selector -> Selector universal (```*```), yang diterapkan untuk semua elemen, dan memiliki prioritas paling rendah. Contoh:
+    ```css
+    * { margin: 0; }
+    ```
+
+## Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+
+Responsive design sangat penting karena sekarang orang mengakses situs web dari berbagai perangkat seperti ponsel, tablet, dan komputer. Desain web responsif memastikan tampilan dan fungsinya tetap baik di semua perangkat, sehingga pengguna mendapatkan pengalaman yang nyaman di mana pun mereka membuka situs tersebut. Jadi, desain responsif bukan lagi pilihan tambahan tetapi sudah menjadi kebutuhan. Dengan desain responsif, selain membuat situs terlihat bagus, kita bisa juga memastikan situs bisa diakses dengan baik, meningkatkan pengalaman pengguna, dan mendukung keberlanjutan situs di era digital yang terus berkembang. Desain responsif juga penting untuk SEO karena mesin pencari seperti Google lebih suka situs yang mobile-friendly, jadi ini bisa membantu meningkatkan visibilitas situs di hasil pencarian. Dengan begitu, memberikan perhatian pada desain responsif akan membuat situs lebih mudah diakses dan relevan untuk berbagai jenis pengguna. 
+
+
+Contoh aplikas yang sudah menerapkan responsive design itu ada YouTube, Twitter (X), dan Facebook. Untuk aplikasi yang belum menerapkannya mungkin seperti website yang ada di toko-toko kecil yang masih merintis. Selain itu banyak situs web pemerintah yang dirancang beberapa tahun lalu belum sepenuhnya responsif, sehingga tampilannya bisa kacau atau sulit digunakan ketika diakses melalui ponsel atau tablet.
+
+## Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+
+<img src="pict/html1.png" width="800" height="500">
+
+a) **Margin** itu ruang kosong di luar border, yang juga bersifat transparan. Margin berfungsi untuk memberikan jarak antara elemen satu dengan elemen lainnya di halaman web. 
+
+b) **Border** adalah garis pembatas yang membungkus konten dan padding. Border bisa memiliki warna, ketebalan, dan gaya yang berbeda (seperti solid, dotted, atau dashed) tergantung bagaimana kita mengaturnya.
+
+c) **Padding** adalah ruang kosong antara konten dan border. Padding bersifat transparan dan tidak memiliki warna kecuali diatur secara spesifik. Padding memberikan jarak antara konten dengan border agar tidak terlalu dekat.
+
+Cara untuk pengaplikasiannya:
+
+<img src="pict/html2.png" width="800" height="500">
+<img src="pict/html3.png" width="800" height="500">
+
+## Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+
+**Flex box** adalah sistem tata letak di CSS yang memungkinkan pengembang web untuk mengatur elemen-elemen di dalam sebuah wadah secara fleksibel. Flexbox bekerja dalam satu dimensi artinya pengaturan elemen bisa dilakukan secara horizontal (sejajar) atau vertikal (menyusun) tapi tidak keduanya secara bersamaan. Cocok untuk tata letak sederhana seperti bar navigasi atau menu. lexbox mempermudah pengaturan jarak antar elemen dan memastikan tampilan tetap rapi di berbagai ukuran layar.
+
+
+**Grid layout** adalah teknik desain web yang memudahkan pengembang untuk membuat tata letak halaman web dengan lebih terstruktur dan fleksibel. Dengan Grid itu kita bisa menentukan posisi elemen, lebar, dan tingginya tanpa perlu menulis kode yang rumit. Dengan kata lain Grid itu sistem tata letak dua dimensi (baris dan kolom) yang lebih kompleks dan dilakukan secara bersamaan. Grid sangat berguna untuk membuat tampilan web yang responsif, sehingga terlihat baik di berbagai ukuran layar.
+
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+
+Berikut adalah parafrase instruksi dalam bentuk tahapan:
+
+1. Mengimplementasikan fitur **edit product** dan **delete product** di file `views.py`.
+
+2. Kemudian mengintegrasikan kedua fungsi tersebut ke dalam **urls.py** untuk mengatur routing.
+
+3. Membuat file HTML yang diperlukan untuk **mengedit informasi produk**.
+
+4. Melakukan konfigurasi untuk **static files** di dalam **settings.py**.
+
+5. Lalu menambahkan styling dengan **Tailwind** dan **CSS** ke aplikasi, dengan membuat file **global.css** dan menambahkan script Tailwind di **base.html**.
+
+6. Melakukan styling pada halaman **login**, **register**, **main**, dan **edit product**.
+
+7. Membuat file styling untuk **card informasi produk** serta **info pengguna**.
+
+## Referensi
+
+https://itec.sch.id/kenapa-desain-website-yang-responsif-itu-penting/
+
+https://www.w3schools.com/css/css_boxmodel.asp
+
+https://dibimbing.id/blog/detail/memahami-penggunaan-css-grid-dan-flexbox
+
+</details>

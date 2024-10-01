@@ -1,44 +1,94 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>Effendy Bouquet</title>
+{% endblock meta %}
 {% block content %}
-<h1>Effendy Bouquet</h1>
+{% include 'navbar.html' %}
+<div class="overflow-x-hidden px-4 md:px-8 pb-8 pt-24 bg-[url('static/image/elegant-luxurious-white-background-free-vector.jpg')] bg-cover bg-center bg-no-repeat flex flex-col">
+  <div class="p-2 mb-6 relative">
+    <div class="flex justify-center block text-green-700 text-center text-4xl font-extrabold ">
+      <h1 id="typewriter"></h1>
+  </div>
+  
+  <script>
+  const words = ["Welcome, {{ user.username }}!", "Halo, {{ user.username }}!", "Selamat Berbelanja!"];
+  let i = 0;
+  let j = 0;
+  let currentWord = "";
+  let isDeleting = false;
+  
+  function type() {
+    currentWord = words[i];
+    if (isDeleting) {
+      document.getElementById("typewriter").textContent = currentWord.substring(0, j-1);
+      j--;
+      if (j == 0) {
+        isDeleting = false;
+        i++;
+        if (i == words.length) {
+          i = 0;
+        }
+      }
+    } else {
+      document.getElementById("typewriter").textContent = currentWord.substring(0, j+1);
+      j++;
+      if (j == currentWord.length) {
+        isDeleting = true;
+      }
+    }
+    setTimeout(type, 150);
+  }
+  
+  type();
+  </script>
+  <div class="flex justify-center px-3 mb-4">
+    <div class="flex rounded-md justify-center items-center py-2 px-4 w-fit">
+      <h6 class="text--400 text-center">Last Login: {{last_login}}</h6>
+    </div>
+  </div>
+  <div class="relative grid grid-cols-1 z-20 md:grid-cols-3 gap-4 p-4 max-w-screen-md mx-auto text-sm">
+      {% include "card_info.html" with title='NPM' value=npm %}
+      {% include "card_info.html" with title='Name' value=nama %}
+      {% include "card_info.html" with title='Class' value=kelas %}
+  </div>
 
-<h5>Name:</h5>
-<p>{{ nama }}</p>
+  <!-- Garis dengan bunga di atas teks "Start your business here!" -->
+  <div class="flex justify-center items-center my-8"> <!-- Menggunakan my-8 untuk jarak atas dan bawah -->
+    <div class="w-full border-t-2 border-green-500 relative">
+        <span class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-2">
+            🌸
+        </span>
+    </div>
+  </div>
 
-<h5>Class:</h5>
-<p>{{ kelas }}</p>
+  <!-- Teks "Start your business here!" -->
+  <div class="flex justify-center px-3 mb-4">
+      <h5 class="text-green-900 font-semibold text-center">Start your business here!</h5>
+  </div>
 
-{% if not product_entries %}
-<p>Belum ada data product pada Effendy Bouquet</p>
-{% else %}
-<table>
-  <tr>
-    <th>Product Name</th>
-    <th>Price</th>
-    <th>Description</th>
-    <th>Quantity</th>
-  </tr>
+  <!-- Tombol Add New Product -->
+  <div class="flex justify-end mb-6 justify-center items-center">
+      <a href="{% url 'main:create_product_entry' %}" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+          Add New Product
+      </a>
+  </div>
 
-  {% comment %} Berikut cara memperlihatkan data product di bawah baris ini 
-  {% endcomment %} 
-  {% for product_entry in product_entries %}
-  <tr>
-    <td>{{product_entry.name}}</td>
-    <td>{{product_entry.price}}</td>
-    <td>{{product_entry.description}}</td>
-    <td>{{product_entry.quantity}}</td>
-  </tr>
-  {% endfor %}
-</table>
-{% endif %}
 
-<br />
-
-<a href="{% url 'main:create_product_entry' %}">
-  <button>Add New Product Entry</button>
-</a>
-<a href="{% url 'main:logout' %}">
-  <button>Logout</button>
-</a>
-<h5>Sesi terakhir login: {{ last_login }}</h5>
- {% endblock content %}
+  <div class = "rounded-lg px-4 md:px-8 pb-8 pt-12 bg-white flex flex-col">
+    {% if not product_entries %}
+    <div class="flex flex-col items-center justify-center min-h-[24rem] p-6">
+        <img src="{% static 'image/sedih-bangett.png' %}" alt="Sad face" class="w-32 h-32 mb-4"/>
+        <p class="text-center text-gray-600 mt-4">Belum ada data product.</p>
+    </div>
+    {% else %}
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 w-full">
+        {% for product_entry in product_entries %}
+            {% include 'card_product.html' with product_entry=product_entry %}
+        {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}
