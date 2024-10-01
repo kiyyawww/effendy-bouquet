@@ -247,7 +247,7 @@ https://www.geeksforgeeks.org difference-between-authentication-and-authorizatio
 https://www.totalit.co.id/blog mengenal-cookies-browser-fungsi-bahaya-dan-cara-mengelolanya
 </details>
 
-## Tugas Individu 4 PBP
+## Tugas Individu 5 PBP
 <details>
 
 ## Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
