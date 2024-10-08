@@ -250,7 +250,7 @@ https://www.totalit.co.id/blog mengenal-cookies-browser-fungsi-bahaya-dan-cara-m
 ## Tugas Individu 5 PBP
 <details>
 
-## Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+### Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
 
 1) Inline styles -> Gaya yang langsung diterapkan pada elemen HTML melalui atribut style. Contoh:
     ```html
@@ -277,14 +277,14 @@ https://www.totalit.co.id/blog mengenal-cookies-browser-fungsi-bahaya-dan-cara-m
     * { margin: 0; }
     ```
 
-## Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+### Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
 
 Responsive design sangat penting karena sekarang orang mengakses situs web dari berbagai perangkat seperti ponsel, tablet, dan komputer. Desain web responsif memastikan tampilan dan fungsinya tetap baik di semua perangkat, sehingga pengguna mendapatkan pengalaman yang nyaman di mana pun mereka membuka situs tersebut. Jadi, desain responsif bukan lagi pilihan tambahan tetapi sudah menjadi kebutuhan. Dengan desain responsif, selain membuat situs terlihat bagus, kita bisa juga memastikan situs bisa diakses dengan baik, meningkatkan pengalaman pengguna, dan mendukung keberlanjutan situs di era digital yang terus berkembang. Desain responsif juga penting untuk SEO karena mesin pencari seperti Google lebih suka situs yang mobile-friendly, jadi ini bisa membantu meningkatkan visibilitas situs di hasil pencarian. Dengan begitu, memberikan perhatian pada desain responsif akan membuat situs lebih mudah diakses dan relevan untuk berbagai jenis pengguna. 
 
 
 Contoh aplikas yang sudah menerapkan responsive design itu ada YouTube, Twitter (X), dan Facebook. Untuk aplikasi yang belum menerapkannya mungkin seperti website yang ada di toko-toko kecil yang masih merintis. Selain itu banyak situs web pemerintah yang dirancang beberapa tahun lalu belum sepenuhnya responsif, sehingga tampilannya bisa kacau atau sulit digunakan ketika diakses melalui ponsel atau tablet.
 
-## Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+### Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
 
 <img src="pict/html1.png" width="800" height="500">
 
@@ -299,7 +299,7 @@ Cara untuk pengaplikasiannya:
 <img src="pict/html2.png" width="800" height="500">
 <img src="pict/html3.png" width="800" height="500">
 
-## Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+### Jelaskan konsep flex box dan grid layout beserta kegunaannya!
 
 **Flex box** adalah sistem tata letak di CSS yang memungkinkan pengembang web untuk mengatur elemen-elemen di dalam sebuah wadah secara fleksibel. Flexbox bekerja dalam satu dimensi artinya pengaturan elemen bisa dilakukan secara horizontal (sejajar) atau vertikal (menyusun) tapi tidak keduanya secara bersamaan. Cocok untuk tata letak sederhana seperti bar navigasi atau menu. lexbox mempermudah pengaturan jarak antar elemen dan memastikan tampilan tetap rapi di berbagai ukuran layar.
 
@@ -307,7 +307,7 @@ Cara untuk pengaplikasiannya:
 **Grid layout** adalah teknik desain web yang memudahkan pengembang untuk membuat tata letak halaman web dengan lebih terstruktur dan fleksibel. Dengan Grid itu kita bisa menentukan posisi elemen, lebar, dan tingginya tanpa perlu menulis kode yang rumit. Dengan kata lain Grid itu sistem tata letak dua dimensi (baris dan kolom) yang lebih kompleks dan dilakukan secara bersamaan. Grid sangat berguna untuk membuat tampilan web yang responsif, sehingga terlihat baik di berbagai ukuran layar.
 
 
-## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
 
 Berikut adalah parafrase instruksi dalam bentuk tahapan:
 
@@ -325,7 +325,7 @@ Berikut adalah parafrase instruksi dalam bentuk tahapan:
 
 7. Membuat file styling untuk **card informasi produk** serta **info pengguna**.
 
-## Referensi
+### Referensi
 
 https://itec.sch.id/kenapa-desain-website-yang-responsif-itu-penting/
 
@@ -335,22 +335,22 @@ https://dibimbing.id/blog/detail/memahami-penggunaan-css-grid-dan-flexbox
 
 </details>
 
-### Tugas Individu 6 PBP
+## Tugas Individu 6 PBP
 <details>
 
-## Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+### Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
 
 Manfaat utama penggunaan JavaScript dalam pengembangan web adalah kemampuannya untuk mengubah tampilan dan konten halaman secara langsung dan dinamis tanpa perlu memuat ulang seluruh halaman. Selain itu, JavaScript memungkinkan interaksi yang lebih kaya dan responsif antara pengguna dan halaman web sehingga memberikan pengalaman yang lebih interaktif dan menarik. Karena itu, hampir semua situs web modern mengandalkan JavaScript untuk memastikan bahwa pengguna mendapatkan pengalaman yang lebih nyaman dan menyenangkan.
 
-## Jelaskan fungsi dari penggunaan ```await``` ketika kita menggunakan ```fetch()```! Apa yang akan terjadi jika kita tidak menggunakan ```await```?
+### Jelaskan fungsi dari penggunaan ```await``` ketika kita menggunakan ```fetch()```! Apa yang akan terjadi jika kita tidak menggunakan ```await```?
 
 ```await``` digunakan di dalam fungsi async untuk menunggu hasil dari suatu operasi asinkronus (misalnya, memanggil API dengan ```fetch()```). Ketika kita menggunakan ```fetch()```, kita berkomunikasi dengan server yang bisa memerlukan waktu untuk merespons. Menggunakan ```await``` dalam konteks ini memungkinkan kita menunggu hasil dari ```fetch()``` sebelum melanjutkan kode berikutnya. Tanpa ```await``` kita akan mendapatkan Promise (janji bahwa hasilnya akan tersedia nanti), tetapi kita tidak dapat langsung menggunakan data tersebut. Selain itu juga ```fetch()``` akan berjalan secara _asynchronous_ artinya program tidak akan menunggu proses ```fetch()``` selesai, dan kode di bawahnya akan langsung dieksekusi.
 
-## Mengapa kita perlu menggunakan _decorator_ ```csrf_exempt``` pada ```view``` yang akan digunakan untuk AJAX ```POST```?
+### Mengapa kita perlu menggunakan _decorator_ ```csrf_exempt``` pada ```view``` yang akan digunakan untuk AJAX ```POST```?
 
 Decorator ```csrf_exempt``` membuat Django tidak perlu mengecek keberadaan ```csrf_token``` pada POST request yang dikirimkan ke fungsi ini. Kita perlu menggunakan ```csrf_exempt``` pada view yang digunakan untuk AJAX POST ketika kita tidak dapat atau tidak ingin menyertakan token CSRF di dalam request tersebut. Hal ini umumnya terjadi ketika permintaan AJAX dikirim dari aplikasi klien yang terpisah dari Django (misalnya, aplikasi frontend berbasis JavaScript yang tidak memanfaatkan form Django). Jika token CSRF tidak disertakan maka permintaan akan ditolak oleh Django dengan pesan kesalahan CSRF. Dengan menggunakan ```csrf_exempt```, Django akan melewati pengecekan ini tetapi tindakan ini harus dilakukan dengan hati-hati karena menonaktifkan lapisan perlindungan dari serangan CSRF.
 
-## Pada tutorial PBP minggu ini, pembersihan data _input_ pengguna dilakukan di belakang (_backend_) juga. Mengapa hal tersebut tidak dilakukan di _frontend_ saja?
+### Pada tutorial PBP minggu ini, pembersihan data _input_ pengguna dilakukan di belakang (_backend_) juga. Mengapa hal tersebut tidak dilakukan di _frontend_ saja?
 
 Pembersihan data di backend tetap diperlukan karena keamanan, keandalan dan juga integritas data:
 
@@ -363,7 +363,7 @@ Pembersihan data di backend tetap diperlukan karena keamanan, keandalan dan juga
 Jika hanya dilakukan di frontend, pengguna bisa memanipulasi data dengan mudah yang dapat menyebabkan serangan atau data tidak valid masuk ke server. Frontend dapat digunakan untuk validasi cepat, tapi backend punya kontrol penuh untuk memastikan data benar-benar aman dan sesuai.
 
 
-## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
 
 1) Menambahkan Pesan Error untuk Login Gagal
 
@@ -377,7 +377,7 @@ Dengan ini, pengguna akan diberi tahu jika username atau password yang mereka ma
 
 2) Membuat Fungsi ```add_product_ajax``` untuk menambahkan produk dengan AJAX:
 
-Saya membuat fungsi baru bernama ```add_product_ajax``` yang menangani request POST untuk menambahkan produk secara asinkron dengan AJAX. Supaya tidak ada masalah CSRF, saya menambahkan decorator ```@csrf_exempt```` dan ```@require_POST``` di fungsi tersebut.
+Saya membuat fungsi baru bernama ```add_product_ajax``` yang menangani request POST untuk menambahkan produk secara asinkron dengan AJAX. Supaya tidak ada masalah CSRF, saya menambahkan decorator ```@csrf_exempt``` dan ```@require_POST``` di fungsi tersebut.
 
 3) Mengamankan Input dengan ```strip_tags```:
 
@@ -443,6 +443,7 @@ Terakhir, untuk keamanan tambahan di frontend, saya memasukkan library DOMPurify
 ## Referensi 
 
 https://pbp-fasilkom-ui.github.io/ganjil-2025/docs/tutorial-5
+
 https://www.w3schools.com/js/js_async.asp
 
 
