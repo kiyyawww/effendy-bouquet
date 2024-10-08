@@ -334,3 +334,116 @@ https://www.w3schools.com/css/css_boxmodel.asp
 https://dibimbing.id/blog/detail/memahami-penggunaan-css-grid-dan-flexbox
 
 </details>
+
+### Tugas Individu 6 PBP
+<details>
+
+## Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+
+Manfaat utama penggunaan JavaScript dalam pengembangan web adalah kemampuannya untuk mengubah tampilan dan konten halaman secara langsung dan dinamis tanpa perlu memuat ulang seluruh halaman. Selain itu, JavaScript memungkinkan interaksi yang lebih kaya dan responsif antara pengguna dan halaman web sehingga memberikan pengalaman yang lebih interaktif dan menarik. Karena itu, hampir semua situs web modern mengandalkan JavaScript untuk memastikan bahwa pengguna mendapatkan pengalaman yang lebih nyaman dan menyenangkan.
+
+## Jelaskan fungsi dari penggunaan ```await``` ketika kita menggunakan ```fetch()```! Apa yang akan terjadi jika kita tidak menggunakan ```await```?
+
+```await``` digunakan di dalam fungsi async untuk menunggu hasil dari suatu operasi asinkronus (misalnya, memanggil API dengan ```fetch()```). Ketika kita menggunakan ```fetch()```, kita berkomunikasi dengan server yang bisa memerlukan waktu untuk merespons. Menggunakan ```await``` dalam konteks ini memungkinkan kita menunggu hasil dari ```fetch()``` sebelum melanjutkan kode berikutnya. Tanpa ```await``` kita akan mendapatkan Promise (janji bahwa hasilnya akan tersedia nanti), tetapi kita tidak dapat langsung menggunakan data tersebut. Selain itu juga ```fetch()``` akan berjalan secara _asynchronous_ artinya program tidak akan menunggu proses ```fetch()``` selesai, dan kode di bawahnya akan langsung dieksekusi.
+
+## Mengapa kita perlu menggunakan _decorator_ ```csrf_exempt``` pada ```view``` yang akan digunakan untuk AJAX ```POST```?
+
+Decorator ```csrf_exempt``` membuat Django tidak perlu mengecek keberadaan ```csrf_token``` pada POST request yang dikirimkan ke fungsi ini. Kita perlu menggunakan ```csrf_exempt``` pada view yang digunakan untuk AJAX POST ketika kita tidak dapat atau tidak ingin menyertakan token CSRF di dalam request tersebut. Hal ini umumnya terjadi ketika permintaan AJAX dikirim dari aplikasi klien yang terpisah dari Django (misalnya, aplikasi frontend berbasis JavaScript yang tidak memanfaatkan form Django). Jika token CSRF tidak disertakan maka permintaan akan ditolak oleh Django dengan pesan kesalahan CSRF. Dengan menggunakan ```csrf_exempt```, Django akan melewati pengecekan ini tetapi tindakan ini harus dilakukan dengan hati-hati karena menonaktifkan lapisan perlindungan dari serangan CSRF.
+
+## Pada tutorial PBP minggu ini, pembersihan data _input_ pengguna dilakukan di belakang (_backend_) juga. Mengapa hal tersebut tidak dilakukan di _frontend_ saja?
+
+Pembersihan data di backend tetap diperlukan karena keamanan, keandalan dan juga integritas data:
+
+1) Keamanan -> Validasi di frontend mudah dimanipulasi misalnya dengan mengubah input menggunakan developer tools atau mengirim data langsung ke server. Backend memastikan data yang diterima aman.
+
+2) Keandalan -> Data di frontend bisa saja tidak bisa dipercaya sepenuhnya karena pengguna memiliki kontrol penuh. Validasi di backend memastikan data yang diproses sesuai dengan aturan yang ditetapkan.
+
+3) Integritas Data -> Frontend validasi membantu pengalaman pengguna tapi backend mencegah data rusak atau tidak sesuai masuk ke sistem.
+
+Jika hanya dilakukan di frontend, pengguna bisa memanipulasi data dengan mudah yang dapat menyebabkan serangan atau data tidak valid masuk ke server. Frontend dapat digunakan untuk validasi cepat, tapi backend punya kontrol penuh untuk memastikan data benar-benar aman dan sesuai.
+
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+
+1) Menambahkan Pesan Error untuk Login Gagal
+
+Pertama, saya memastikan jika login gagal, user akan mendapatkan pesan error. Di dalam fungsi login setelah memeriksa if ```form.is_valid()```, saya menambahkan blok else yang berisi:
+
+```python
+messages.error(request, "Invalid username or password. Please try again.")
+```
+
+Dengan ini, pengguna akan diberi tahu jika username atau password yang mereka masukkan salah.
+
+2) Membuat Fungsi ```add_product_ajax``` untuk menambahkan produk dengan AJAX:
+
+Saya membuat fungsi baru bernama ```add_product_ajax``` yang menangani request POST untuk menambahkan produk secara asinkron dengan AJAX. Supaya tidak ada masalah CSRF, saya menambahkan decorator ```@csrf_exempt```` dan ```@require_POST``` di fungsi tersebut.
+
+3) Mengamankan Input dengan ```strip_tags```:
+
+Karena input dari user bisa berbahaya jika mengandung HTML, saya menggunakan ```strip_tags``` untuk membersihkan tag HTML dari input nama dan deskripsi produk: 
+
+```python
+name = strip_tags(request.POST.get('name'))
+description = strip_tags(request.POST.get('description'))
+```
+
+4) Menambahkan Routing di ```urls.py```:
+
+Saya juga menambahkan routing baru di urls.py sehingga fungsi ```add_product_ajax``` bisa diakses melalui URL tertentu.
+
+``` python
+path('add-product/', views.add_product_ajax, name='add_product_ajax'),
+```
+
+5) Fetching Data Produk yang Sudah Ada:
+
+Setelah itu, saya membuat fungsi di sisi frontend untuk melakukan fetching data produk yang sudah dimiliki oleh user, dan saya memanggilnya di dalam fungsi ```refreshProductEntries()``` yang akan memperbarui tampilan produk secara otomatis.
+
+6) Menambahkan Modal untuk Menambahkan Produk:
+
+Saya merancang modal yang berisi form untuk menambahkan produk baru menggunakan AJAX. Modal ini mempermudah pengguna untuk memasukkan nama produk, deskripsi, harga, dan jumlahnya.
+
+7) Membuat Fungsi ```showModal()``` dan ```hideModal()```:
+
+Saya juga membuat dua fungsi JavaScript, ```showModal()``` untuk menampilkan modal dan ```hideModal()``` untuk menutupnya setelah produk ditambahkan atau dibatalkan.
+
+8) Menambahkan Tombol *"Add Product by AJAX"*:
+
+Supaya modal bisa dipicu, saya menambahkan tombol di halaman dengan target modal yang sudah saya buat, sehingga ketika tombol "Add Product" diklik, modal akan muncul.
+
+9) Membuat Fungsi ```addProductEntry()``` untuk Mengirimkan Produk:
+
+Di sisi JavaScript, saya membuat fungsi ```addProductEntry()``` yang akan mengirimkan data produk melalui request POST ke server. Setelah produk berhasil ditambahkan, fungsi ini akan memanggil ```refreshProductEntries()``` untuk memperbarui daftar produk tanpa harus reload halaman.
+
+10) Menambahkan Event Listener pada Form Modal:
+
+Saya juga memastikan form di dalam modal punya event listener yang akan memanggil ```addProductEntry()``` saat form disubmit. Jadi, setiap kali user klik "Save", form akan diproses tanpa reload halaman.
+
+```javascript
+document.getElementById('productEntryForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    addProductEntry();
+});
+```
+
+11) Validasi Input dengan Fungsi ```clean_name()``` dan ```clean_desc()``` di form.py:
+
+Supaya input produk divalidasi dengan benar, saya menambahkan fungsi ```clean_name()``` dan ```clean_desc()``` di form.py, yang akan memeriksa apakah input yang diberikan sesuai dengan aturan yang saya tetapkan.
+
+12) Menambahkan DOMPurify untuk Keamanan
+
+Terakhir, untuk keamanan tambahan di frontend, saya memasukkan library DOMPurify di template ```main.html``` dalam block meta. Ini membersihkan input yang dimasukkan pengguna agar bebas dari potensi injeksi HTML:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
+```
+
+
+## Referensi 
+
+https://pbp-fasilkom-ui.github.io/ganjil-2025/docs/tutorial-5
+https://www.w3schools.com/js/js_async.asp
+
+
+</details>
