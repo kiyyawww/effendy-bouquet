@@ -11,7 +11,7 @@ class ProductForm(ModelForm):
         name = self.cleaned_data["name"]
         return strip_tags(name)
 
-    def clean_desription(self):
+    def clean_description(self):
         description = self.cleaned_data["description"]
         return strip_tags(description)
     

@@ -427,9 +427,9 @@ document.getElementById('productEntryForm').addEventListener('submit', function(
 });
 ```
 
-11) Validasi Input dengan Fungsi ```clean_name()``` dan ```clean_desc()``` di form.py:
+11) Validasi Input dengan Fungsi ```clean_name()``` dan ```clean_description()``` di form.py:
 
-Supaya input produk divalidasi dengan benar, saya menambahkan fungsi ```clean_name()``` dan ```clean_desc()``` di form.py, yang akan memeriksa apakah input yang diberikan sesuai dengan aturan yang saya tetapkan.
+Supaya input produk divalidasi dengan benar, saya menambahkan fungsi ```clean_name()``` dan ```clean_description()``` di form.py, yang akan memeriksa apakah input yang diberikan sesuai dengan aturan yang saya tetapkan.
 
 12) Menambahkan DOMPurify untuk Keamanan
 
